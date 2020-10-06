@@ -1,0 +1,55 @@
+<div style="min-width: 100%; min-height: 200%; background-image: url('../assets/bghomefull.jpg');">
+<div class="container " style="max-width: 600px; background-color: rgb(243, 233, 233)">
+<h2 class="textual">Registration</h2>
+<form #Registrationform="ngForm" (ngSubmit)= registerUser()>
+   <!-- <small [class.text-danger]= "msg.status==500">{{msg.message}}</small>  -->
+   <small class="text-danger">{{msg}}</small>
+  <!-- <div class="form-group">
+            <label for="email">Email address:</label>
+            <input type="email" class="form-control" placeholder="Enter Email" name="email" [(ngModel)]= "user.emailId" required 
+              pattern="/^[a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$/" #email="ngModel"
+            [class.is-invalid]="email.invalid && email.touched">
+          <div *ngIf="email.errors  && (email.invalid && email.touched)">
+              <small class="text-danger" *ngIf="email.errors.required">Email is required</small>
+              <small class="text-danger" *ngIf="email.errors.pattern">Enter valid Email Id</small> 
+          </div>
+          </div> -->
+           <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="text" class="form-control" placeholder="email " name="email" [(ngModel)]= "user.emailId" required #email="ngModel"
+            [class.is-invalid]="email.invalid && email.touched"
+            >
+            <small class="text-danger" [class.d-none]="email.valid || email.untouched"> User Name is required</small>
+          </div> 
+
+          <div class="form-group">
+                <label for="userName">User Name:</label>
+                <input type="text" class="form-control" placeholder="User Name" name="userName" [(ngModel)]= "user.userName" required #userName="ngModel"
+                [class.is-invalid]="userName.invalid && userName.touched"
+                >
+                <small class="text-danger" [class.d-none]="userName.valid || userName.untouched"> User Name is required</small>
+              </div>
+              <div class="form-group">
+                    <label for="pwd">Password:</label>
+                    <input type="password" class="form-control" placeholder="Password" name="password" [(ngModel)]= "user.password" required #password="ngModel"
+                    [class.is-invalid]="password.invalid && password.touched"
+                    >
+                    <small class="text-danger" [class.d-none]="password.valid || password.untouched"> Password is required</small>
+                  </div>
+                  <div class="form-group">
+                        <label for="cpassword">Confirm Password:</label>
+                        <input type="password" class="form-control" placeholder="Enter ConfirmPassword" name="cpassword" [(ngModel)]= "user.cpassword" required #cpassword="ngModel"
+                        [class.is-invalid]="cpassword.invalid && cpassword.touched"
+                        >
+                        <small class="text-danger" [class.d-none]="(cpassword.value == password.value) || cpassword.untouched"> Password and Confirm Password should be same</small>
+                      </div>
+                  <div class="checkbox">
+                    <label><input type="checkbox"> Remember me</label>
+                  </div>
+                  <button [disabled]="Registrationform.form.invalid" type="submit" class="btn btn-info">Register</button>
+               
+                  <small class="float-right " [routerLink]="['/login']">Existing User? Login Here</small>
+
+</form>
+</div>
+</div>

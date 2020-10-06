@@ -1,0 +1,30 @@
+/* .navbar-custom {
+    background-color:tan;
+}
+.btn:hover {
+    background-color: rgb(213, 216, 224);
+  }
+
+  body,html{
+      background-color: rgb(41, 37, 37);
+  }
+
+  .bg {
+    height: 100%; 
+  background-color: tan;*/
+    /* Center and scale the image nicely */
+    /* background-image: "../assets/bghomefull.jpg";
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; */
+/* 
+  }
+.right
+{
+    position: absolute; 
+    right: 0;
+} */ 
+
+.space{
+  flex: 1 1 auto;
+}
